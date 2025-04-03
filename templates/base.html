@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
     <link rel="stylesheet" href="https://unpkg.com/xp.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     {% endblock %}
 </head>
 <body>
@@ -23,23 +24,15 @@
     {% endblock %}
 
     {% block content %}
-    <div style="
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 800vh;
-        background-image: url('{{ url_for('static', filename='images/background-2.png') }}'), url('{{ url_for('static', filename='images/background-2-tile.png') }}');
-        background-repeat: no-repeat, repeat;
-        background-position: top center, top center;
-        background-size: 100%, 100% auto;">
+    <div class="background-container">
         <div class="window" style="width: 900px">
             <div class="title-bar">
-            <div class="title-bar-text">the mike site</div>
-            <div class="title-bar-controls">
-                <button aria-label="Minimize"></button>
-                <button aria-label="Maximize"></button>
-                <button aria-label="Close"></button>
-            </div>
+                <div class="title-bar-text">the mike site</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close"></button>
+                </div>
             </div>
             <div class="window-body">
                 {% block page_content %}{% endblock %}
