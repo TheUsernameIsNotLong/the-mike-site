@@ -27,10 +27,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
-        margin: 0;
-        padding: 0;
-        background: url('{{ url_for('static', filename='images/background-tile-1.png') }}') repeat;">
+        height: 800vh;
+        background-image: url('{{ url_for('static', filename='images/background-2.png') }}'), url('{{ url_for('static', filename='images/background-2-tile.png') }}');
+        background-repeat: no-repeat, repeat;
+        background-position: top center, top center;
+        background-size: 100%, 100% auto;">
         <div class="window" style="width: 900px">
             <div class="title-bar">
             <div class="title-bar-text">the mike site</div>
