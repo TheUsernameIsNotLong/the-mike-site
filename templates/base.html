@@ -19,8 +19,24 @@
     {% endblock %}
 
     {% block content %}
-    <div>
-        {% block page_content %}{% endblock %}
+    <div style="
+        display: flex;
+        justify-content: center;
+        align-items; center;
+        height: 100vh;">
+        <div class="window" style="width: 900px">
+            <div class="title-bar">
+            <div class="title-bar-text">the mike site</div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+            </div>
+            </div>
+            <div class="window-body">
+                {% block page_content %}{% endblock %}
+            </div>
+        </div>
     </div>
     {% endblock %}
 </body>
