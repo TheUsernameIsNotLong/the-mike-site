@@ -3,15 +3,24 @@ body {
     padding: 0;
 }
 
-.background-container {
+div.background-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 800vh;
+    height: 100vh;
     background-image:
         url("/static/images/background-2.png"),
         url("/static/images/background-2-tile.png");
     background-repeat: no-repeat, repeat;
     background-position: top center, top center;
     background-size: 100%, 100% auto;
+}
+
+.centered-window {
+    text-align: center;
+}
+
+div.navbar {
+    display: flex;
+    justify-content: center;
 }
