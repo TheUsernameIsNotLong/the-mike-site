@@ -13,17 +13,24 @@
 </head>
 <body>
     {% block navbar %}
+    <div style="
+    display: flex;
+    justify-content: center;">
     <nav>
         <a href="/">the mike site</a>
     </nav>
+    </div>
     {% endblock %}
 
     {% block content %}
     <div style="
         display: flex;
         justify-content: center;
-        align-items; center;
-        height: 100vh;">
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        background: url('{{ url_for('static', filename='images/background-tile-1.png') }}') repeat;">
         <div class="window" style="width: 900px">
             <div class="title-bar">
             <div class="title-bar-text">the mike site</div>
