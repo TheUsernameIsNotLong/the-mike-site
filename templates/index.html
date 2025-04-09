@@ -11,5 +11,13 @@
         <button>Log-in</button>
         <button>Sign-up</button>
     </section>
+    <form method="POST">
+        <section class="field-row" style="justify-content: center">
+            {{ form.hidden_tag() }}
+            {{ form.name.label }} {{ form.name(id='my-text-field') }}
+            {{ form.submit() }}
+        </section>
+    </form>
 </div>
+
 {% endblock %}
