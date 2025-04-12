@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}register - the mike site{% endblock %}
+
+{% block page_content %}
+<div class="centered-window">
+    <h2>the mike site account registration</h2>
+    <form method="POST">
+        <section class="field-row" style="justify-content: center">
+            {{ form.hidden_tag() }}
+            {{ form.email.label }} {{ form.email(id='email-field') }}
+            {{ form.username.label }} {{ form.username(id='username-field') }}
+            {{ form.password.label }} {{ form.password(id='password-field') }}
+            {{ form.password2.label }} {{ form.password2(id='password2-field') }}
+            <button type="submit">Submit</button>
+        </section>
+    </form>
+    <p>don't have an account yet? click here to make one!</p>
+</div>
+{% endblock %}

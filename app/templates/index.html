@@ -5,19 +5,11 @@
 {% block page_content %}
 <div class="centered-window">
     <h2>☺ ~ THE MIKE SITE ~ ☺</h2>
+    {% if current_user.is_authenticated %}
+    <h3>You are logged in as {{ current_user.username }}!</h3>
+    {% endif %}
     <p>Welcome to the mike site!</p>
     <p>You'll need an account to continue, please sign up below if you don't already have one!</p>
-    <section class="field-row" style="justify-content: center">
-        <button>Log-in</button>
-        <button>Sign-up</button>
-    </section>
-    <form method="POST">
-        <section class="field-row" style="justify-content: center">
-            {{ form.hidden_tag() }}
-            {{ form.name.label }} {{ form.name(id='my-text-field') }}
-            <button type="submit">Submit</button>
-        </section>
-    </form>
 </div>
 
 {% endblock %}

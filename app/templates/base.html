@@ -16,7 +16,15 @@
     {% block navbar %}
     <div class="navbar">
         <nav>
-            <a href="/">the mike site</a>
+            <ul>
+                <li><a href="/">the mike site</a></li>
+                {% if current_user.is_authenticated %}
+                <li><a href="{{ url_for('auth.logout') }}">logout</a></li>
+                {% else %}
+                <li><a href="{{ url_for('auth.register') }}">register</a></li>
+                <li><a href="{{ url_for('auth.login') }}">login</a></li>
+                {% endif %}
+            </ul>
         </nav>
     </div>
     {% endblock %}
