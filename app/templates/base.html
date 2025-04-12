@@ -13,22 +13,6 @@
     {% endblock %}
 </head>
 <body>
-    {% block navbar %}
-    <div class="navbar">
-        <nav>
-            <ul>
-                <li><a href="/">the mike site</a></li>
-                {% if current_user.is_authenticated %}
-                <li><a href="{{ url_for('auth.logout') }}">logout</a></li>
-                {% else %}
-                <li><a href="{{ url_for('auth.register') }}">register</a></li>
-                <li><a href="{{ url_for('auth.login') }}">login</a></li>
-                {% endif %}
-            </ul>
-        </nav>
-    </div>
-    {% endblock %}
-
     {% block content %}
     <div class="background-container">
         <div class="window" style="max-width: 900px; scale: 1.5">
@@ -41,6 +25,19 @@
                 </div>
             </div>
             <div class="window-body">
+                {% block navbar %}
+                <div class="navbar">
+                    <nav>
+                        <a href="/"><button href="/">HOME</button></a>
+                        {% if current_user.is_authenticated %}
+                        <a href="{{ url_for('auth.logout') }}"><button>LOGOUT</button></a>
+                        {% else %}
+                        <a href="{{ url_for('auth.register') }}"><button>REGISTER</button></a>
+                        <a href="{{ url_for('auth.login') }}"><button>LOGIN</button></a>
+                        {% endif %}
+                    </nav>
+                </div>
+                {% endblock %}
                 {% block page_content %}{% endblock %}
             </div>
         </div>
