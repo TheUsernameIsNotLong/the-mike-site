@@ -32,13 +32,13 @@
                     <fieldset class="navbox">
                         {{ ui.nav_button('home.ico', 'HOME', href='/') }}
                         {% if current_user.is_authenticated %}
-                            {{ ui.nav_button('logout.ico', 'LOGOUT', href=url_for('auth.logout')) }}
                             {{ ui.nav_button('register.ico', 'REGISTER', disabled=True) }}
                             {{ ui.nav_button('login.ico', 'LOGIN', disabled=True) }}
+                            {{ ui.nav_button('logout.ico', 'LOGOUT', href=url_for('auth.logout')) }}
                         {% else %}
-                            {{ ui.nav_button('logout.ico', 'LOGOUT', disabled=True) }}
                             {{ ui.nav_button('register.ico', 'REGISTER', href=url_for('auth.register')) }}
                             {{ ui.nav_button('login.ico', 'LOGIN', href=url_for('auth.login')) }}
+                            {{ ui.nav_button('logout.ico', 'LOGOUT', disabled=True) }}
                         {% endif %}
                     </fieldset>
                 </nav>
@@ -47,7 +47,7 @@
             </div>
             <div class="status-bar">
                 <p class="status-bar-field">the mike site</p>
-                <p class="status-bar-field">datetime</p>
+                <p class="status-bar-field">there is no MOTD</p>
                 <p class="status-bar-field">{% if current_user.is_authenticated %}{{ current_user.username }}{% else %}Not signed in{% endif %}</p>
             </div>
         </div>
