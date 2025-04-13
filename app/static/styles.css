@@ -25,6 +25,22 @@ div.navbar {
     justify-content: center;
 }
 
+div.navbutton {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    padding: 4px;
+}
+
+div.navbutton img {
+    padding-bottom: 4px;
+}
+
+button:disabled div.navbutton img {
+    filter: grayscale(1);
+    pointer-events: none;
+}
+
 nav.navbox {
     display: flex;
     width: 100%;
