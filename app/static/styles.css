@@ -62,5 +62,5 @@ fieldset.navbox button {
 .window {
     scale: 1.5;
     min-width: min-content;
-    max-width: 50vw;
+    max-width: min-content;
 }

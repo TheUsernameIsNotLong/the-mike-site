@@ -1,0 +1,19 @@
+{% macro nav_button(icon, label, href=None, disabled=False) %}
+    {% if href and not disabled %}
+        <a href="{{ href }}">
+            <button>
+                <div class="navbutton">
+                    <img src="{{ url_for('static', filename='icons/' ~ icon) }}" style="width: 32px;" />
+                    {{ label }}
+                </div>
+            </button>
+        </a>
+    {% else %}
+        <button disabled>
+            <div class="navbutton">
+                <img src="{{ url_for('static', filename='icons/' ~ icon) }}" style="width: 32px;" />
+                {{ label }}
+            </div>
+        </button>
+    {% endif %}
+{% endmacro %}

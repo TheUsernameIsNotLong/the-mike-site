@@ -1,3 +1,5 @@
+{% import "includes/macros_ui.html" as ui %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,63 +30,25 @@
                 {% block navbar %}
                 <nav class="navbox">
                     <fieldset class="navbox">
-                        <a href="/">
-                            <button>
-                                <div class="navbutton">
-                                    <img src="{{ url_for('static', filename='icons/home.ico') }}" style="width: 32px;"/>
-                                    HOME
-                                </div>
-                            </button>
-                        </a>
+                        {{ ui.nav_button('home.ico', 'HOME', href='/') }}
                         {% if current_user.is_authenticated %}
-                        <a href="{{ url_for('auth.logout') }}">
-                            <button>
-                                <div class="navbutton">
-                                    <img src="{{ url_for('static', filename='icons/logout.ico') }}" style="width: 32px;" />
-                                    LOGOUT
-                                </div>
-                            </button>
-                        </a>
-                        <button disabled>
-                            <div class="navbutton">
-                                <img src="{{ url_for('static', filename='icons/register.ico') }}" style="width: 32px;" />
-                                REGISTER
-                            </div>
-                        </button>
-                        <button disabled>
-                            <div class="navbutton">
-                                <img src="{{ url_for('static', filename='icons/login.ico') }}" style="width: 32px;" />
-                                LOGIN
-                            </div>
-                        </button>
+                            {{ ui.nav_button('logout.ico', 'LOGOUT', href=url_for('auth.logout')) }}
+                            {{ ui.nav_button('register.ico', 'REGISTER', disabled=True) }}
+                            {{ ui.nav_button('login.ico', 'LOGIN', disabled=True) }}
                         {% else %}
-                        <button disabled>
-                            <div class="navbutton">
-                                <img src="{{ url_for('static', filename='icons/logout.ico') }}" style="width: 32px;" />
-                                LOGOUT
-                            </div>
-                        </button>
-                        <a href="{{ url_for('auth.register') }}">
-                            <button>
-                                <div class="navbutton">
-                                    <img src="{{ url_for('static', filename='icons/register.ico') }}" style="width: 32px;" />
-                                    REGISTER
-                                </div>
-                            </button>
-                        </a>
-                        <a href="{{ url_for('auth.login') }}">
-                            <button>
-                                <div class="navbutton">
-                                    <img src="{{ url_for('static', filename='icons/login.ico') }}" style="width: 32px;" />
-                                    LOGIN
-                                </div>
-                            </button>
-                        </a>
+                            {{ ui.nav_button('logout.ico', 'LOGOUT', disabled=True) }}
+                            {{ ui.nav_button('register.ico', 'REGISTER', href=url_for('auth.register')) }}
+                            {{ ui.nav_button('login.ico', 'LOGIN', href=url_for('auth.login')) }}
                         {% endif %}
                     </fieldset>
                 </nav>
                 {% endblock %}
                 {% block page_content %}{% endblock %}
+            </div>
+            <div class="status-bar">
+                <p class="status-bar-field">the mike site</p>
+                <p class="status-bar-field">datetime</p>
+                <p class="status-bar-field">{% if current_user.is_authenticated %}{{ current_user.username }}{% else %}Not signed in{% endif %}</p>
             </div>
         </div>
     </div>
