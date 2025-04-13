@@ -1,6 +1,14 @@
+/* WINDOW */
+
 body {
     margin: 0;
     padding: 0;
+}
+
+.window {
+    scale: 1.5;
+    min-width: min-content;
+    max-width: min-content;
 }
 
 div.background-container {
@@ -19,6 +27,9 @@ div.background-container {
 .centered-window {
     text-align: center;
 }
+
+
+/* NAVBAR */
 
 div.navbar {
     display: flex;
@@ -59,8 +70,21 @@ fieldset.navbox button {
     max-width: 90px;
 }
 
-.window {
-    scale: 1.5;
-    min-width: min-content;
-    max-width: min-content;
+
+/* FORMS */
+
+fieldset.formbox {
+    margin: 1rem;
+    margin-inline: 4rem;
+    padding: 1rem;
+}
+
+fieldset.formbox div.field-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+fieldset.formbox div.field-row:last-child {
+    margin-bottom: 0;
 }

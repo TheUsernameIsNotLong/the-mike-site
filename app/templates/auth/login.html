@@ -1,20 +1,12 @@
 {% extends "base.html" %}
+{% import "includes/macros_form.html" as forms %}
 
 {% block title %}login - the mike site{% endblock %}
 
 {% block page_content %}
 <div class="centered-window">
     <h2>the mike site account login</h2>
-    <form method="POST">
-        <section class="field-row" style="justify-content: center">
-            {{ form.hidden_tag() }}
-            {{ form.email.label }} {{ form.email(id='email-field') }}
-            {{ form.password.label }} {{ form.password(id='password-field') }}
-            <input type="checkbox" id="remember_me-field">
-            <label for="remember_me-field">REMEMBER ME</label>
-            <button type="submit">Submit</button>
-        </section>
-    </form>
+    {{ forms.quick_form(form, legend="Account Login") }}
     <p><a href="{{ url_for('auth.register') }}">don't have an account yet? click here to make one!</a></p>
 </div>
 {% endblock %}

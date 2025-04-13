@@ -1,0 +1,26 @@
+{% macro quick_form(form, legend=None, field_ids={}) %}
+<form method="POST">
+    <fieldset class="formbox">
+        <legend>{{legend}}</legend>
+        {{ form.hidden_tag() }}
+
+        {% for field in form %}
+        <div class="field-row">
+            {% if field.type == 'SubmitField' %}
+                <button type="submit">{{ field.label.text }}</button>
+
+            {% elif field.type == 'BooleanField' %}
+                {{ field(id=field_ids.get(field.name, field.id)) }}
+                <label for="{{ field_ids.get(field.name, field.id) or field.id }}">{{ field.label.text }}</label>
+
+            {% elif field.type not in ['HiddenField', 'CSRFTokenField'] %}
+                {{ field.label }}
+                {{ field(id=field_ids.get(field.name, field.id)) }}
+        
+            {% endif %}
+        </div>
+        {% endfor %}
+
+    </fieldset>
+</form>
+{% endmacro %}
