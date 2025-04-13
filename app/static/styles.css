@@ -32,7 +32,6 @@ nav.navbox {
 
 fieldset.navbox {
     display: flex;
-    width: 100%;
     justify-content: center;
     margin: 0;
     gap: 2vw;
@@ -42,4 +41,10 @@ fieldset.navbox {
 fieldset.navbox button {
     min-width: 90px;
     max-width: 90px;
+}
+
+.window {
+    scale: 1.5;
+    min-width: min-content;
+    max-width: 50vw;
 }
