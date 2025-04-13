@@ -25,17 +25,21 @@ div.navbar {
     justify-content: center;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
+nav.navbox {
+    display: flex;
+    width: 100%;
+}
+
+fieldset.navbox {
+    display: flex;
+    width: 100%;
+    justify-content: center;
     margin: 0;
+    gap: 2vw;
+    padding: 1em 2vw;
 }
 
-li {
-    float: left;
-}
-
-li a {
-    display: block;
-    margin-right: 48px;
+fieldset.navbox button {
+    min-width: 90px;
+    max-width: 90px;
 }

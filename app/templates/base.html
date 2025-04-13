@@ -15,7 +15,7 @@
 <body>
     {% block content %}
     <div class="background-container">
-        <div class="window" style="max-width: 900px; scale: 1.5">
+        <div class="window" style="scale: 1.5; max-width: 50vw">
             <div class="title-bar">
                 <div class="title-bar-text">the mike site</div>
                 <div class="title-bar-controls">
@@ -27,17 +27,19 @@
             <div class="window-body">
                 {% block navbar %}
                 <div class="navbar">
-                    <nav>
-                        <a href="/"><button>HOME</button></a>
-                        {% if current_user.is_authenticated %}
-                        <a href="{{ url_for('auth.logout') }}"><button>LOGOUT</button></a>
-                        <button disabled>REGISTER</button>
-                        <button disabled>LOGIN</button>
-                        {% else %}
-                        <button disabled>LOGOUT</button>
-                        <a href="{{ url_for('auth.register') }}"><button>REGISTER</button></a>
-                        <a href="{{ url_for('auth.login') }}"><button>LOGIN</button></a>
-                        {% endif %}
+                    <nav class="navbox">
+                        <fieldset class="navbox">
+                            <a href="/"><button>HOME</button></a>
+                            {% if current_user.is_authenticated %}
+                            <a href="{{ url_for('auth.logout') }}"><button>LOGOUT</button></a>
+                            <button disabled>REGISTER</button>
+                            <button disabled>LOGIN</button>
+                            {% else %}
+                            <button disabled>LOGOUT</button>
+                            <a href="{{ url_for('auth.register') }}"><button>REGISTER</button></a>
+                            <a href="{{ url_for('auth.login') }}"><button>LOGIN</button></a>
+                            {% endif %}
+                        </fieldset>
                     </nav>
                 </div>
                 {% endblock %}
