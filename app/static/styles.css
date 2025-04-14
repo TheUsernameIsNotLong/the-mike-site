@@ -6,16 +6,18 @@ body {
 }
 
 .window {
-    scale: 1.5;
+    scale: 1;
     min-width: min-content;
     max-width: min-content;
+    min-height: min-content;
+    max-height: min-content;
 }
 
 div.background-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background-image:
         url("/static/images/background-2.png"),
         url("/static/images/background-2-tile.png");
@@ -53,8 +55,9 @@ button:disabled div.navbutton img {
 }
 
 nav.navbox {
-    display: flex;
-    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 fieldset.navbox {

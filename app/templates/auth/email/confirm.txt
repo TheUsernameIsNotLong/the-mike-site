@@ -1,0 +1,13 @@
+hello {{ user.username }},
+
+welcome to the mike site!!
+
+to confirm your account, please click below:
+
+{{ url_for('auth.confirm', token=token, _external=True) }}
+
+kind regards,
+
+the mike site
+
+p.s. replies are NOT monitored!!!

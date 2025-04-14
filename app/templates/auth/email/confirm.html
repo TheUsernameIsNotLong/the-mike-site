@@ -1,0 +1,8 @@
+<p>hello {{ user.username }},</p>
+<p>welcome to <b>the mike site</b>!!</p>
+<p>to confirm your account, please <a href="{{ url_for('auth.confirm', token=token, _external=True) }}">click here</a>.</p>
+<p>you can also use the following:</p>
+<p>{{ url_for('auth.confirm', token=token, _external=True) }}</p>
+<p>kind regards,</p>
+<p>the mike site</p>
+<p><small>p.s. replies are NOT monitored!!!</small></p>
