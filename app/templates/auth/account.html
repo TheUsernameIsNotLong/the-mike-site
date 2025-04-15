@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Account - the mike site{% endblock %}
+
+{% block page_content %}
+<div class="centered-window">
+    <h2>{{ current_user.username }}</h2>
+    <h3>Account Settings</h3>
+    <p>This is where the account info goes!</p>
+    <a href="{{ url_for('auth.change_password') }}"><button>Change Password</button></a>
+    
+</div>
+{% endblock %}
