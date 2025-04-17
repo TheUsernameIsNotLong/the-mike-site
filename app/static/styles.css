@@ -129,6 +129,11 @@ fieldset.formbox div.field-row:last-child {
 
 /* TABS */
 
+section.tabs {
+    margin-inline: 2rem;
+    margin-block: 1rem;
+}
+
 menu[role=tablist] {
     justify-content: center;
 }
