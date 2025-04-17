@@ -69,8 +69,8 @@ fieldset.navbox {
 }
 
 fieldset.navbox button {
-    min-width: 90px;
-    max-width: 90px;
+    min-width: 6rem;
+    max-width: 6rem;
 }
 
 
@@ -124,4 +124,11 @@ fieldset.formbox div.field-row:last-child {
 .flash img {
     width: 1rem;
     margin-right: 0.5rem;
+}
+
+
+/* TABS */
+
+.tablist {
+    justify-content: center;
 }
