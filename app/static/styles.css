@@ -129,6 +129,6 @@ fieldset.formbox div.field-row:last-child {
 
 /* TABS */
 
-.tablist {
+menu[role=tablist] {
     justify-content: center;
 }
