@@ -7,6 +7,7 @@
 <div class="centered-window">
     <h2>the mike site account login</h2>
     {{ forms.quick_form(form, legend="Account Login") }}
-    <p><a href="{{ url_for('auth.register') }}">don't have an account yet? click here to make one!</a></p>
+    <p>don't have an account yet? <a href="{{ url_for('auth.register') }}">click here to make one</a>!</p>
+    <p>forgot your password? <a href="{{ url_for('auth.password_reset_request') }}">click here to reset it</a>.</p>
 </div>
 {% endblock %}
