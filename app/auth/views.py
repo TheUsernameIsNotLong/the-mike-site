@@ -35,7 +35,7 @@ def login():
             if next is None or not next.startswith('/'):
                 next = url_for('main.index')
             return redirect(next)
-        flash('Invalid email or password.')    
+        flash('Invalid email or password.', "error")    
     return render_template('auth/login.html', form=form)
 
 
@@ -43,7 +43,7 @@ def login():
 @login_required
 def logout():
     logout_user()
-    flash('You have been logged out.')
+    flash('You have been logged out.', "info")
     return redirect(url_for('main.index'))
 
 
@@ -56,7 +56,7 @@ def register():
                     password=form.password.data)
         db.session.add(user)
         db.session.commit()
-        flash('You can now login.')
+        flash('You can now login.', "info")
         return redirect(url_for('auth.login'))
     return render_template('auth/register.html', form=form)
 
@@ -68,9 +68,9 @@ def confirm(token):
         return redirect(url_for('main.index'))
     if current_user.confirm(token):
         db.session.commit()
-        flash('You have confirmed your account. Thanks!')
+        flash('You have confirmed your account. Thanks!', "success")
     else:
-        flash('The confirmation link is invalid or has expired.')
+        flash('The confirmation link is invalid or has expired.', "error")
     return redirect(url_for('main.index'))
 
 
@@ -80,7 +80,7 @@ def resend_confirmation():
     token = current_user.generate_confirmation_token()
     send_email(current_user.email, 'Confirm Your Account',
                'auth/email/confirm', user=current_user, token=token)
-    flash('A new confirmation email has been sent to you by email.')
+    flash('A new confirmation email has been sent to you by email.', "info")
     return redirect(url_for('main.index'))
 
 
@@ -89,7 +89,7 @@ def account():
     return render_template('auth/account.html')
 
 
-@auth.route('/change-password', methods=['GET', 'POST'])
+@auth.route('/account/change-password', methods=['GET', 'POST'])
 @login_required
 def change_password():
     form = ChangePasswordForm()

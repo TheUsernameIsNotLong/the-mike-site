@@ -4,10 +4,19 @@
 
 {% block page_content %}
 <div class="centered-window">
-    <h2>{{ current_user.username }}</h2>
     <h3>Account Settings</h3>
-    <p>This is where the account info goes!</p>
-    <a href="{{ url_for('auth.change_password') }}"><button>Change Password</button></a>
-    
+    <section class="tabs">
+        <menu role="tablist" aria-label="Account Tabs">
+            <button role="tab" aria-selected="true" aria-controls="profile">Profile</button>
+            <button role="tab" aria-controls="account">Account</button>
+        </menu>
+        <article role="tabpanel" id="profile">
+            <p>This is where the profile info goes!</p>
+        </article>
+        <article role="tabpanel" hidden id="account">
+            <p>This is where the account info goes!</p>
+            <a href="{{ url_for('auth.change_password') }}"><button>Change Password</button></a>
+        </article>
+    </section>
 </div>
 {% endblock %}

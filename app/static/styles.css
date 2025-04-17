@@ -6,7 +6,7 @@ body {
 }
 
 .window {
-    scale: 1;
+    zoom: 1.5;
     min-width: min-content;
     max-width: min-content;
     min-height: min-content;
@@ -90,4 +90,38 @@ fieldset.formbox div.field-row {
 
 fieldset.formbox div.field-row:last-child {
     margin-bottom: 0;
+}
+
+/* FLASHES */
+
+.flash {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 6px;
+    color: white;
+}
+
+.flash.success {
+    background-color: #2ecc71;
+}
+
+.flash.error {
+    background-color: #cc2e2e;
+}
+
+.flash.info {
+    background-color: #2e53cc;
+}
+
+.flash.warning {
+    background-color: #ccc12e;
+}
+
+.flash img {
+    width: 1rem;
+    margin-right: 0.5rem;
 }
