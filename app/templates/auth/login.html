@@ -5,9 +5,9 @@
 
 {% block page_content %}
 <div class="centered-window">
-    <h2>the mike site account login</h2>
+    <h2>Account Login</h2>
     {{ forms.quick_form(form, legend="Account Login") }}
-    <p>don't have an account yet? <a href="{{ url_for('auth.register') }}">click here to make one</a>!</p>
-    <p>forgot your password? <a href="{{ url_for('auth.password_reset_request') }}">click here to reset it</a>.</p>
+    <p>Don't have an account yet? <a href="{{ url_for('auth.register') }}">Click here to make one</a>!</p>
+    <p>Forgot your password? <a href="{{ url_for('auth.password_reset_request') }}">Click here to reset it</a>.</p>
 </div>
 {% endblock %}

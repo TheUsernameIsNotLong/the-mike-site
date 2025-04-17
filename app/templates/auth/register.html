@@ -5,8 +5,10 @@
 
 {% block page_content %}
 <div class="centered-window">
-    <h2>the mike site account registration</h2>
+    <h2>Account Registration</h2>
+    <p>Currently, as long as its not nothing, there is no criteria required for the password you choose. This does technically mean the password can be as insecure as you'd like, but i'm going to politely ask you make it at least 8 characters long, and include uppercase and lowercase letters as well as numbers.</p>
+    <p>Now I dont believe the honour system is going to last me long, so I will get round to implementing password criteria as soon as possible.</p>
     {{ forms.quick_form(form, legend="Create Account") }}
-    <p>don't have an account yet? click here to make one!</p>
+    <p>Already have an account? <a href="{{ url_for('auth.login') }}">Click here to sign in</a>!</p>
 </div>
 {% endblock %}
