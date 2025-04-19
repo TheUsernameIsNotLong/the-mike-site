@@ -11,7 +11,7 @@
     </p>
     {% endif %}
     {% if current_user.is_administrator() %}
-    <p>ADMINISTRATOR!!!</p>
+    <img src="{{ url_for('static', filename='images/admin.gif') }}" />
     {% endif %}
     {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
     <p>Member since {{ moment(user.member_since).format('L') }}. Last seen {{ moment(user.last_seen).fromNow() }}.</p>
