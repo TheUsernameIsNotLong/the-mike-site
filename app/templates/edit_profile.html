@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% import "includes/macros_form.html" as forms %}
+
+{% block title %}profile editor - the mike site{% endblock %}
+
+{% block page_content %}
+<div class="centered-window">
+    <h3>Edit Your Profile</h3>
+    {{ forms.quick_form(form, legend="Profile Editor") }}
+</div>
+{% endblock %}
