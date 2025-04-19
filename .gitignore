@@ -179,3 +179,7 @@ cython_debug/
 # SQLite files
 *.sqlite
 *.sqlite-journal
+
+# Avatars
+app/static/avatars/*
+!app/static/avatars/default.png

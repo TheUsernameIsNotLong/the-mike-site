@@ -5,6 +5,7 @@
 {% block page_content %}
 <div class="centered-window">
     <h2>{{ user.username }}</h2>
+    <img src="{{ url_for('static', filename='avatars/' ~ user.avatar) }}" />
     {% if user.name %}
     <p>
         {% if user.name %}{{ user.name }}{% endif %}

@@ -1,4 +1,5 @@
 from flask_wtf import FlaskForm
+from flask_wtf.file import FileField, FileAllowed
 from wtforms import StringField, TextAreaField, BooleanField, SelectField, SubmitField, ValidationError
 from wtforms.validators import DataRequired, Length, Email, Regexp
 from ..models import Role, User
@@ -10,6 +11,7 @@ class NameForm(FlaskForm):
     
     
 class EditProfileForm(FlaskForm):
+    avatar = FileField('Avatar', validators=[FileAllowed(['jpg', 'png', 'jpeg'], 'Images only!')])
     name = StringField('Display name', validators=[Length(0, 64)])
     about_me = TextAreaField('About me')
     submit = SubmitField('Submit')
@@ -20,6 +22,7 @@ class EditProfileAdminForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired(), Length(1, 64), Regexp('^[A-Za-z][A-Za-z0-9_.]*$', 0, 'Usernames can only include letters, numbers, dots or underscores')])
     confirmed = BooleanField('Confirmed')
     role = SelectField('Role', coerce=int)
+    avatar = FileField('Avatar', validators=[FileAllowed(['jpg', 'png', 'jpeg'], 'Images only!')])
     name = StringField('Display name', validators=[Length(0, 64)])
     about_me = TextAreaField('About me')
     submit = SubmitField('Submit')

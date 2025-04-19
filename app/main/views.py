@@ -1,4 +1,7 @@
-from flask import render_template, redirect, url_for, abort, flash
+import os
+from PIL import Image
+from werkzeug.utils import secure_filename
+from flask import current_app, render_template, redirect, url_for, abort, flash
 from flask_login import login_required, current_user
 from . import main
 from .forms import EditProfileForm, EditProfileAdminForm
@@ -25,6 +28,19 @@ def edit_profile():
     if form.validate_on_submit():
         current_user.name = form.name.data
         current_user.about_me = form.about_me.data
+        
+        file = form.avatar.data
+        if file:
+            filename = secure_filename(file.filename)
+            ext = filename.rsplit('.', 1)[1]
+            filename = f'user_{current_user.id}.{ext}'
+            filepath = os.path.join(current_app.root_path, 'static/avatars', filename)
+            image = Image.open(file)
+            image = image.convert("RGB")
+            image = image.resize((128,128))
+            image.save(filepath)
+            current_user.avatar = filename
+        
         db.session.add(current_user._get_current_object())
         db.session.commit()
         flash('Your profile has been updated.', "success")
@@ -47,6 +63,19 @@ def edit_profile_admin(id):
         user.role = Role.query.get(form.role.data)
         user.name = form.name.data
         user.about_me = form.about_me.data
+
+        file = form.avatar.data
+        if file:
+            filename = secure_filename(file.filename)
+            ext = filename.rsplit('.', 1)[1]
+            filename = f'user_{id}.{ext}'
+            filepath = os.path.join(current_app.root_path, 'static/avatars', filename)
+            image = Image.open(file)
+            image = image.convert("RGB")
+            image = image.resize((128,128))
+            image.save(filepath)
+            current_user.avatar = filename
+
         db.session.add(user)
         db.session.commit()
         flash('The profile has been updated.', "success")

@@ -1,5 +1,5 @@
 {% macro quick_form(form, legend=None, field_ids={}) %}
-<form method="POST">
+<form method="POST" enctype="multipart/form-data">
     <fieldset class="formbox">
         <legend>{{legend}}</legend>
         {{ form.hidden_tag() }}
