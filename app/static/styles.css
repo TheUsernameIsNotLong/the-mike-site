@@ -30,6 +30,7 @@ div.background-container {
 
 .centered-window {
     text-align: center;
+    justify-items: center;
 }
 
 
@@ -138,4 +139,39 @@ section.tabs {
 
 menu[role=tablist] {
     justify-content: center;
+}
+
+
+/* USER PROFILES */
+
+div.user-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+div.user-info-container {
+    display: flex;
+    flex-direction: column;
+}
+
+div.user-info-name-container {
+    display: flex;
+    padding-block: 0.5em;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+div.user-info-name-container h4 {
+    margin-block: 0.1em;
+}
+
+div.user-info-name-container p {
+    margin-block: 0;
+}
+
+div.user-info-time-container {
+    display: flex;
+    justify-content: space-between;
 }
