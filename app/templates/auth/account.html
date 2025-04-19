@@ -12,6 +12,7 @@
         </menu>
         <article role="tabpanel" id="profile">
             <p>This is where the profile info goes!</p>
+            <a href="{{ url_for('main.user', username=current_user.username) }}"><button>View Profile</button></a>
         </article>
         <article role="tabpanel" hidden id="account">
             <p>This is where the account info goes!</p>
