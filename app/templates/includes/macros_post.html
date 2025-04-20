@@ -1,7 +1,12 @@
 {% macro post(post, moment) %}
     <fieldset>
-        <div class="subject-container">
-            <h4>Subject</h4>
+        <div class="upper-container">
+            <div class="subject-container">
+                <h4>Subject</h4>
+            </div>
+            <div class="id-container">
+                <p>#{{post.id}}</p>
+            </div>
         </div>
         <div class="content-container">
             <div class="author-container">
@@ -15,7 +20,7 @@
             <div class="post-container">
                 <div class="post-properties-container">
                     <p>No Tags</p>
-                    <div class="post-date">{{ moment(post.timestamp).fromNow() }}</div>
+                    <p>{{ moment(post.timestamp).fromNow() }}</p>
                 </div>
                 <div class="post-body">{{ post.body }}</div>
             </div>
