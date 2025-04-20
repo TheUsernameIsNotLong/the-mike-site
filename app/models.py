@@ -165,5 +165,5 @@ class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     subject = db.Column(db.String, nullable=True)
     body = db.Column(db.Text)
-    timestamp = db.Column(db.DateTime, index=True, default=datetime.now(timezone.utc))
+    timestamp = db.Column(db.DateTime, index=True, default=lambda: datetime.now(timezone.utc))
     author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
