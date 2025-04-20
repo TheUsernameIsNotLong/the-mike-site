@@ -1,4 +1,5 @@
 alembic==1.15.2
+bbcode==1.1.0
 blinker==1.9.0
 click==8.1.8
 colorama==0.4.6
