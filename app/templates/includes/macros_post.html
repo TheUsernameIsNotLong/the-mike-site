@@ -1,11 +1,15 @@
 {% macro post(post, moment) %}
     <fieldset>
+        {% if post.subject %}
         <div class="upper-container">
             <div class="subject-container">
-                <h4>Subject</h4>
+                <h4>{{ post.subject }}</h4>
             </div>
+        {% else %}
+        <div class="upper-container nosubject">
+        {% endif %}
             <div class="id-container">
-                <p>#{{post.id}}</p>
+                <p>#{{ post.id }}</p>
             </div>
         </div>
         <div class="content-container">
