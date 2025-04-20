@@ -85,6 +85,14 @@ fieldset.formbox {
     padding: 1rem;
 }
 
+fieldset.formbox textarea {
+    background-color: #ddeeff;
+    min-width: 240px;
+    max-width: fit-content;
+    min-height: 128px;
+    max-height: fit-content;
+}
+
 fieldset.formbox div.field-row {
     display: flex;
     flex-direction: column;
